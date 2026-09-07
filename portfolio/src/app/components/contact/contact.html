@@ -1,5 +1,186 @@
-<section id="contact">
-      <!-- my profesionnal contact info and a form to send an email from the website -->
-      <h2 class="contact__title">Get in Touch</h2>
-      <p class="contact__description">Feel free to reach out if you have any questions or opportunities!</p>
+<section id="contact" class="contact">
+  <div class="contact__container">
+
+    <div class="contact__heading">
+      <p class="contact__eyebrow">
+        04 / {{ languageService.translations().contact.title }}
+      </p>
+
+      <h2 class="contact__title">
+        {{ languageService.translations().contact.title }}
+      </h2>
+
+      <p class="contact__description">
+        {{ languageService.translations().contact.description }}
+      </p>
+    </div>
+
+    <div class="contact__content">
+
+      <!-- Professional contact information -->
+      <div class="contact__info">
+
+        <div class="contact__info-header">
+          <span class="contact__info-label">
+            {{ languageService.translations().contact.infoLabel }}
+          </span>
+
+          <h3 class="contact__info-title">
+            {{ languageService.translations().contact.infoTitle }}
+          </h3>
+        </div>
+
+        <div class="contact__details">
+
+          <a
+            href="mailto:adrien.belloc.dev@gmail.com"
+            class="contact__detail"
+          >
+            <div class="contact__detail-icon">
+              <i class="devicon-google-plain"></i>
+            </div>
+
+            <div class="contact__detail-content">
+              <span class="contact__detail-label">
+                {{ languageService.translations().contact.emailLabel }}
+              </span>
+
+              <span class="contact__detail-value">
+                adrien.belloc.dev@gmail.com
+              </span>
+            </div>
+          </a>
+
+          <a
+            href="https://github.com/adrien-belloc"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact__detail"
+          >
+            <div class="contact__detail-icon">
+              <i class="devicon-github-original"></i>
+            </div>
+
+            <div class="contact__detail-content">
+              <span class="contact__detail-label">
+                {{ languageService.translations().contact.githubLabel }}
+              </span>
+
+              <span class="contact__detail-value">
+                adrien-belloc
+              </span>
+            </div>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/adrien-belloc/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact__detail"
+          >
+            <div class="contact__detail-icon">
+              <i class="devicon-linkedin-plain"></i>
+            </div>
+
+            <div class="contact__detail-content">
+              <span class="contact__detail-label">
+                {{ languageService.translations().contact.linkedinLabel }}
+              </span>
+
+              <span class="contact__detail-value">
+                Adrien Belloc
+              </span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Contact form -->
+      <form class="contact__form">
+
+        <div class="contact__form-row">
+
+          <div class="contact__field">
+            <label for="name" class="contact__label">
+              {{ languageService.translations().contact.name }}
+            </label>
+
+            <input
+              id="name"
+              type="text"
+              class="contact__input"
+              [placeholder]="languageService.translations().contact.namePlaceholder"
+            />
+          </div>
+
+          <div class="contact__field">
+            <label for="email" class="contact__label">
+              {{ languageService.translations().contact.email }}
+            </label>
+
+            <input
+              id="email"
+              type="email"
+              class="contact__input"
+              [placeholder]="languageService.translations().contact.emailPlaceholder"
+            />
+          </div>
+
+        </div>
+
+        <div class="contact__field">
+          <label for="subject" class="contact__label">
+            {{ languageService.translations().contact.subject }}
+          </label>
+
+          <input
+            id="subject"
+            type="text"
+            class="contact__input"
+            [placeholder]="languageService.translations().contact.subjectPlaceholder"
+          />
+        </div>
+
+        <div class="contact__field">
+          <label for="message" class="contact__label">
+            {{ languageService.translations().contact.message }}
+          </label>
+
+          <textarea
+            id="message"
+            class="contact__textarea"
+            rows="6"
+            [placeholder]="languageService.translations().contact.messagePlaceholder"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="contact__submit"
+        >
+          <span>
+            {{ languageService.translations().contact.send }}
+          </span>
+
+          <svg
+            class="contact__submit-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m22 2-7 20-4-9-9-4Z" />
+            <path d="M22 2 11 13" />
+          </svg>
+        </button>
+
+      </form>
+
+    </div>
+  </div>
 </section>

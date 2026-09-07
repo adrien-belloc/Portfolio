@@ -1,9 +1,100 @@
-<section id="projects">
-      <!-- List of projects, two tabs, academic and professional. Projects shown as cards with only then name, and then on click show the full project with the description -->
-      <h2 class="projects__title">My Projects</h2>
-      <ul class="projects__list">
-        <li class="projects__item">Project 1</li>
-        <li class="projects__item">Project 2</li>
-        <li class="projects__item">Project 3</li>
-      </ul>
+<section id="projects" class="projects">
+  <div class="projects__container">
+
+    <!-- Heading -->
+    <div class="projects__heading">
+      <p class="projects__eyebrow">02 / Projects</p>
+
+      <h2 class="projects__title">
+        {{ languageService.translations().projects.title }}
+      </h2>
+
+      <p class="projects__description">
+        {{ languageService.translations().projects.description }}
+      </p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="projects__tabs">
+      <button
+        type="button"
+        class="projects__tab"
+        [class.projects__tab--active]="activeCategory() === 'professional'"
+        (click)="setCategory('professional')"
+      >
+        {{ languageService.translations().projects.professional }}
+      </button>
+
+      <button
+        type="button"
+        class="projects__tab"
+        [class.projects__tab--active]="activeCategory() === 'academic'"
+        (click)="setCategory('academic')"
+      >
+        {{ languageService.translations().projects.academic }}
+      </button>
+    </div>
+
+    <!-- Projects -->
+    <div class="projects__list">
+
+      @for (project of filteredProjects(); track project.id) {
+        <article
+          class="projects__item"
+          [class.projects__item--active]="activeProject() === project.id"
+          (click)="selectProject(project.id)"
+        >
+
+          <!-- Background -->
+          <div class="projects__background">
+            <img
+              [src]="project.images[0]"
+              [alt]="project.title"
+            />
+          </div>
+
+          <!-- Overlay -->
+          <div class="projects__overlay"></div>
+
+          <!-- Content -->
+          <div class="projects__content">
+
+            <div class="projects__preview-image">
+              <img
+                [src]="project.images[0]"
+                [alt]="project.title"
+              />
+            </div>
+
+            <div class="projects__text">
+
+              <h3 class="projects__item-title">
+                {{ project.title }}
+              </h3>
+
+              @if (activeProject() === project.id) {
+                <p class="projects__item-description">
+                  {{ project.description[languageService.language()] }}
+                </p>
+
+                <ul class="projects__technologies">
+                  @for (technology of project.technologies; track technology.name) {
+                    <li class="projects__technology">
+                      <i [class]="technology.icon"></i>
+                      <span>{{ technology.name }}</span>
+                    </li>
+                  }
+                </ul>
+              }
+
+            </div>
+
+          </div>
+
+        </article>
+      }
+
+    </div>
+
+  </div>
 </section>

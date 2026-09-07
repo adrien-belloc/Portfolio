@@ -1,5 +1,162 @@
-<section id="background">
-      <!-- Just a descending line with points with date and title with description under that show my journey (Diplomas, experiences, etc...) -->
-      <h2 class="background__title">My Background</h2>
-      <p class="background__description">I started my journey in web development in 2020 and have been learning and growing ever since.</p>
+<section id="background" class="background">
+      <div class="background__container">
+
+            <div class="background__heading">
+                  <p class="background__eyebrow">
+                        03 / {{ languageService.translations().background.title }}
+                  </p>
+
+                  <h2 class="background__title">
+                        {{ languageService.translations().background.title }}
+                  </h2>
+
+                  <p class="background__description">
+                        {{ languageService.translations().background.description }}
+                  </p>
+            </div>
+
+
+            <div class="background__timeline">
+
+                  <!-- 2022 — BAC STI2D -->
+                  <article class="background__timeline-item">
+                        <div class="background__timeline-card">
+                              <p class="background__timeline-type">
+                                    {{ languageService.translations().background.education }}
+                              </p>
+
+                              <h3 class="background__timeline-title">
+                                    {{ languageService.translations().background.events.highSchool.title }}
+                              </h3>
+
+                              <p class="background__timeline-description">
+                                    {{ languageService.translations().background.events.highSchool.description }}
+                              </p>
+                        </div>
+
+                        <div class="background__timeline-point">
+                              <span class="background__timeline-date">2022</span>
+                              <span class="background__timeline-dot"></span>
+                        </div>
+                  </article>
+
+
+                  <!-- 2024 — Boucherie Belloc -->
+                  <article class="background__timeline-item background__timeline-item--right">
+                        <div class="background__timeline-card">
+                              <p class="background__timeline-type">
+                                    {{ languageService.translations().background.experience }}
+                              </p>
+
+                              <h3 class="background__timeline-title">
+                                    {{ languageService.translations().background.events.butcherInternship.title }}
+                              </h3>
+
+                              <p class="background__timeline-description">
+                                    {{ languageService.translations().background.events.butcherInternship.description }}
+                              </p>
+
+                              <a href="#projects" class="background__timeline-link">
+                                    {{ languageService.translations().background.events.butcherInternship.link }}
+                              </a>
+                        </div>
+
+                        <div class="background__timeline-point">
+                              <span class="background__timeline-date">2024</span>
+                              <span class="background__timeline-dot"></span>
+                        </div>
+                  </article>
+
+
+                  <!-- 2025 — Imprimerie Trèfle -->
+                  <article class="background__timeline-item">
+                        <div class="background__timeline-card">
+                              <p class="background__timeline-type">
+                                    {{ languageService.translations().background.experience }}
+                              </p>
+
+                              <h3 class="background__timeline-title">
+                                    {{ languageService.translations().background.events.printingInternship.title }}
+                              </h3>
+
+                              <p class="background__timeline-description">
+                                    {{ languageService.translations().background.events.printingInternship.description
+                                    }}
+                              </p>
+
+                              <a href="#projects" class="background__timeline-link">
+                                    {{ languageService.translations().background.events.printingInternship.link }}
+                              </a>
+                        </div>
+
+                        <div class="background__timeline-point">
+                              <span class="background__timeline-date">2025</span>
+                              <span class="background__timeline-dot"></span>
+                        </div>
+                  </article>
+
+
+                  <!-- 2025 — BUT Informatique -->
+                  <article class="background__timeline-item background__timeline-item--right">
+                        <div class="background__timeline-card">
+                              <p class="background__timeline-type">
+                                    {{ languageService.translations().background.education }}
+                              </p>
+
+                              <h3 class="background__timeline-title">
+                                    {{ languageService.translations().background.events.bachelor.title }}
+                              </h3>
+
+                              <p class="background__timeline-description">
+                                    {{ languageService.translations().background.events.bachelor.description }}
+                              </p>
+                        </div>
+
+                        <div class="background__timeline-point">
+                              <span class="background__timeline-date">2025</span>
+                              <span class="background__timeline-dot"></span>
+                        </div>
+                  </article>
+
+
+                  <!-- NOW — Current -->
+                  <article class="background__timeline-item background__timeline-item--current">
+                        <div class="background__timeline-card">
+                              <p class="background__timeline-type">
+                                    {{ languageService.translations().background.current }}
+                              </p>
+
+                              <h3 class="background__timeline-title">
+                                    {{ languageService.translations().background.events.now.title }}
+                              </h3>
+
+                              <p class="background__timeline-description">
+                                    {{ languageService.translations().background.events.now.description }}
+                              </p>
+
+                              <a href="/documents/cv.pdf" target="_blank" rel="noopener noreferrer"
+                                    class="background__timeline-link">
+                                    <span>
+                                          {{ languageService.translations().background.events.now.link }}
+                                    </span>
+
+                                    <svg class="background__timeline-link-icon" xmlns="http://www.w3.org/2000/svg"
+                                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                          <path d="M12 3v12" />
+                                          <path d="m7 10 5 5 5-5" />
+                                          <path d="M5 21h14" />
+                                    </svg>
+                              </a>
+                        </div>
+
+                        <div class="background__timeline-point">
+                              <span class="background__timeline-date">NOW</span>
+                              <span class="background__timeline-dot"></span>
+                        </div>
+                  </article>
+
+            </div>
+
+      </div>
 </section>

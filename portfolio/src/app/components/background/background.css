@@ -1,0 +1,486 @@
+.background {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 5rem 4rem;
+
+  overflow: hidden;
+}
+
+.background::before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 800px;
+  height: 600px;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    ellipse,
+    rgba(37, 99, 235, 0.08),
+    transparent 70%
+  );
+
+  pointer-events: none;
+}
+
+
+/* ========================================
+   Heading
+   ======================================== */
+
+.background__container {
+  position: relative;
+  z-index: 1;
+
+  width: min(1100px, 100%);
+  margin: 0 auto;
+}
+
+.background__heading {
+  margin-bottom: 3rem;
+}
+
+.background__eyebrow {
+  margin-bottom: 0.75rem;
+
+  color: var(--color-primary-light);
+
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.background__title {
+  margin-bottom: 1rem;
+
+  color: var(--color-text);
+
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.background__description {
+  max-width: 650px;
+
+  color: var(--color-text-secondary);
+
+  line-height: 1.7;
+}
+
+
+/* ========================================
+   Timeline
+   ======================================== */
+
+.background__timeline {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  padding: 1rem 0 2rem;
+}
+
+
+/* Central vertical line */
+
+.background__timeline::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+
+  width: 1px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--color-primary-dark) 8%,
+    var(--color-primary-light) 50%,
+    var(--color-primary-dark) 92%,
+    transparent
+  );
+
+  transform: translateX(-50%);
+}
+
+
+/* ========================================
+   Timeline items
+   ======================================== */
+
+.background__timeline-item {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 50%;
+  min-height: 180px;
+
+  padding-right: 4rem;
+
+  box-sizing: border-box;
+}
+
+.background__timeline-item--right {
+  align-self: flex-end;
+
+  padding-right: 0;
+  padding-left: 4rem;
+}
+
+
+/* ========================================
+   Timeline cards
+   ======================================== */
+
+.background__timeline-card {
+  width: 100%;
+
+  padding: 1.4rem 1.6rem;
+
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+
+  background: rgba(17, 24, 39, 0.7);
+
+  backdrop-filter: blur(10px);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.background__timeline-item:hover .background__timeline-card {
+  border-color: rgba(59, 130, 246, 0.4);
+
+  background: rgba(23, 32, 51, 0.85);
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.2),
+    0 0 25px rgba(37, 99, 235, 0.08);
+}
+
+
+/* Move cards slightly away from the timeline */
+
+.background__timeline-item:not(
+    .background__timeline-item--right
+  ):hover
+  .background__timeline-card {
+  transform: translateX(-6px);
+}
+
+.background__timeline-item--right:hover
+  .background__timeline-card {
+  transform: translateX(6px);
+}
+
+
+/* ========================================
+   Card content
+   ======================================== */
+
+.background__timeline-type {
+  margin-bottom: 0.4rem;
+
+  color: var(--color-primary-light);
+
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.background__timeline-title {
+  margin-bottom: 0.5rem;
+
+  color: var(--color-text);
+
+  font-size: 1.15rem;
+  font-weight: 650;
+}
+
+.background__timeline-description {
+  max-width: 600px;
+
+  color: var(--color-text-secondary);
+
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.background__timeline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  border-radius: 7px;
+  background: rgba(37, 99, 235, 0.08);
+  color: var(--color-primary-light);
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.background__timeline-link:hover {
+  border-color: var(--color-primary-light);
+  background: rgba(37, 99, 235, 0.16);
+  color: var(--color-text);
+  transform: translateY(-2px);
+}
+
+.background__timeline-link-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+
+/* ========================================
+   Timeline connector
+   ======================================== */
+
+/*
+ * Horizontal line connecting the card
+ * to the central timeline.
+ */
+
+.background__timeline-item::after {
+  content: "";
+
+  position: absolute;
+
+  top: 50%;
+  right: 0;
+
+  width: 4rem;
+  height: 1px;
+
+  background: var(--color-border);
+
+  transform: translateY(-50%);
+}
+
+.background__timeline-item--right::after {
+  right: auto;
+  left: 0;
+}
+
+
+/* ========================================
+   Timeline point + date
+   ======================================== */
+
+.background__timeline-point {
+  position: absolute;
+
+  top: 50%;
+  right: -4px;
+
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  transform: translateY(-50%);
+}
+
+.background__timeline-item--right
+  .background__timeline-point {
+  right: auto;
+  left: -4px;
+
+  flex-direction: row-reverse;
+}
+
+
+/* Date sits beside the timeline point */
+
+.background__timeline-date {
+  color: var(--color-primary-light);
+
+  font-family: monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+
+  white-space: nowrap;
+}
+
+
+/* Timeline dot */
+
+.background__timeline-dot {
+  width: 9px;
+  height: 9px;
+
+  border: 2px solid var(--color-primary-light);
+  border-radius: 50%;
+
+  background: var(--color-background);
+
+  box-shadow:
+    0 0 0 4px rgba(37, 99, 235, 0.08),
+    0 0 15px rgba(59, 130, 246, 0.5);
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.background__timeline-item:hover
+  .background__timeline-dot {
+  background: var(--color-primary-light);
+
+  box-shadow:
+    0 0 0 6px rgba(37, 99, 235, 0.1),
+    0 0 20px rgba(59, 130, 246, 0.7);
+
+  transform: scale(1.25);
+}
+
+
+/* ========================================
+   Current position
+   ======================================== */
+
+.background__timeline-item--current {
+  min-height: 150px;
+}
+
+.background__timeline-item--current
+  .background__timeline-card {
+  border-color: rgba(59, 130, 246, 0.35);
+
+  background: rgba(37, 99, 235, 0.06);
+}
+
+.background__timeline-item--current
+  .background__timeline-dot {
+  width: 12px;
+  height: 12px;
+
+  background: var(--color-primary-light);
+
+  box-shadow:
+    0 0 0 5px rgba(37, 99, 235, 0.12),
+    0 0 25px rgba(59, 130, 246, 0.7);
+}
+
+.background__timeline-item--current
+  .background__timeline-title {
+  font-size: 1.3rem;
+}
+
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 700px) {
+  .background {
+    padding: 5rem 1.5rem;
+  }
+
+  .background__heading {
+    margin-bottom: 2rem;
+  }
+
+
+  /* Move timeline to the left */
+
+  .background__timeline::before {
+    left: 8px;
+
+    transform: none;
+  }
+
+
+  /* All cards become right-sided */
+
+  .background__timeline-item,
+  .background__timeline-item--right {
+    align-self: stretch;
+
+    width: 100%;
+
+    min-height: 0;
+
+    padding: 0 0 2.5rem 2.5rem;
+  }
+
+
+  /* Connector */
+
+  .background__timeline-item::after,
+  .background__timeline-item--right::after {
+    top: 8px;
+    left: 8px;
+    right: auto;
+
+    width: 2rem;
+
+    transform: none;
+  }
+
+
+  /* Point */
+
+  .background__timeline-point,
+  .background__timeline-item--right
+    .background__timeline-point {
+    top: 8px;
+    left: 3px;
+    right: auto;
+
+    flex-direction: row;
+
+    transform: none;
+  }
+
+
+  /* Date appears between the point and card */
+
+  .background__timeline-date {
+    position: absolute;
+
+    left: 1.25rem;
+
+    transform: translateY(-50%);
+  }
+
+
+  /* Card */
+
+  .background__timeline-item:hover
+    .background__timeline-card,
+  .background__timeline-item--right:hover
+    .background__timeline-card {
+    transform: translateX(4px);
+  }
+}
