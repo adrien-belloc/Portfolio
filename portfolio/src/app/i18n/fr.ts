@@ -15,4 +15,11 @@ export const fr = {
     background: 'Parcours',
     contact: 'Contact',
   },
+
+  skills: {
+    title: 'Mes Compétences',
+    description: 'Grâce à mes études et à mes expériences professionnelles, j’ai développé une base solide en développement web et en programmation.',
+    languages: 'Langages',
+    frameworks: 'Frameworks & Outils',
+  },
 };

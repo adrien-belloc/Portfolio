@@ -15,4 +15,11 @@ export const en = {
     background: 'Background',
     contact: 'Contact',
   },
+
+  skills: {
+    title: 'My Skills',
+    description: 'Through my studies and professional experiences, I have developed a solid foundation in web development and programming.',
+    languages: 'Languages',
+    frameworks: 'Frameworks & Tools',
+  },
 };

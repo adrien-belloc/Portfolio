@@ -1,34 +1,205 @@
-<section id="skills">
-      <!-- Two list of skills, first the languages and then the tools such as frameworks, showed with small icons and their name below -->
-      <h1 class="skills__title">My Skills</h1>
-      <h2 class="skills__subtitle">Languages</h2>
-      <ul class="skills__list">
-        <li class="skills__item">Java</li>
-        <li class="skills__item">Kotlin</li>
-        <li class="skills__item">Python</li>
-        <li class="skills__item">JavaScript</li>
-        <li class="skills__item">TypeScript</li>
-        <li class="skills__item">PHP</li>
-        <li class="skills__item">HTML</li>
-        <li class="skills__item">CSS</li>
-        <li class="skills__item">SQL</li>
-      </ul>
-      <h2 class="skills__subtitle">Frameworks & Tools</h2>
-      <ul class="skills__list">
-        <li class="skills__item">Vue.js</li>
-        <li class="skills__item">Angular</li>
-        <li class="skills__item">Bootstrap</li>
-        <li class="skills__item">Tailwind CSS</li>
-        <li class="skills__item">Spring Boot</li>
-        <li class="skills__item">Flask</li>
-        <li class="skills__item">Node.js</li>
-        <li class="skills__item">Laravel</li>
-        <li class="skills__item">Docker</li>
-        <li class="skills__item">Git</li>
-        <li class="skills__item">Linux</li>
-        <li class="skills__item">Jetbrains</li>
-        <li class="skills__item">VSCode</li>
-        <li class="skills__item">Figma</li>
-        <li class="skills__item">Canva</li>
-      </ul>
+<section id="skills" class="skills">
+  <div class="skills__container">
+
+    <div class="skills__heading">
+      <p class="skills__eyebrow">01 / Skills</p>
+
+      <h2 class="skills__title">
+        {{ languageService.translations().skills.title }}
+      </h2>
+
+      <p class="skills__description">
+        {{ languageService.translations().skills.description }}
+      </p>
+    </div>
+
+    <div class="skills__groups">
+
+      <!-- Languages -->
+      <div class="skills__group">
+        <h3 class="skills__subtitle">
+          {{ languageService.translations().skills.languages }}
+        </h3>
+
+        <div class="skills__grid">
+          <div class="skills__item">
+            <div class="skills__icon">
+               <i class="devicon-java-plain colored"></i>
+            </div>
+            <span>Java</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-kotlin-plain colored"></i>
+            </div>
+            <span>Kotlin</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-python-plain colored"></i>
+            </div>
+            <span>Python</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-javascript-plain colored"></i>
+            </div>
+            <span>JavaScript</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-typescript-plain colored"></i>
+            </div>
+            <span>TypeScript</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-php-plain colored "></i>
+            </div>
+            <span>PHP</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-html5-plain colored"></i>
+            </div>
+            <span>HTML</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-css3-plain colored"></i>
+            </div>
+            <span>CSS</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-sqlite-plain colored"></i>
+            </div>
+            <span>SQL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frameworks & Tools -->
+      <div class="skills__group">
+        <h3 class="skills__subtitle">
+          {{ languageService.translations().skills.frameworks }}
+        </h3>
+
+        <div class="skills__grid">
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-vuejs-plain colored"></i>
+            </div>
+            <span>Vue.js</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-angular-plain colored"></i>
+            </div>
+            <span>Angular</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-bootstrap-plain colored"></i>
+            </div>
+            <span>Bootstrap</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-tailwindcss-plain colored"></i>
+            </div>
+            <span>Tailwind CSS</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-spring-plain colored"></i>
+            </div>
+            <span>Spring Boot</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-flask-plain colored"></i>
+            </div>
+            <span>Flask</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-nodejs-plain colored"></i>
+            </div>
+            <span>Node.js</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-laravel-plain colored"></i>
+            </div>
+            <span>Laravel</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-docker-plain colored"></i>
+            </div>
+            <span>Docker</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-git-plain colored"></i>
+            </div>
+            <span>Git</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-linux-plain colored"></i>
+            </div>
+            <span>Linux</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-jetbrains-plain colored"></i>
+            </div>
+            <span>JetBrains</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-vscode-plain colored"></i>
+            </div>
+            <span>VS Code</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-figma-plain colored"></i>
+            </div>
+            <span>Figma</span>
+          </div>
+
+          <div class="skills__item">
+            <div class="skills__icon">
+              <i class="devicon-canva-plain colored"></i>
+            </div>
+            <span>Canva</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
