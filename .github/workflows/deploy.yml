@@ -27,7 +27,7 @@ jobs:
 
       - name: Install dependencies
         working-directory: ./portfolio
-        run: npm ci
+        run: npm install
 
       - name: Build Angular application
         working-directory: ./portfolio
