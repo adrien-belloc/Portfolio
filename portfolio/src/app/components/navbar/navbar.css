@@ -1,0 +1,324 @@
+/* =========================
+   Navbar
+   ========================= */
+
+.menu {
+  position: relative;
+  top: 0;
+  left: 0;
+
+  z-index: 100;
+
+  width: 220px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 2rem;
+
+  background: rgba(8, 11, 18, 0.8);
+  border-right: 1px solid var(--color-border);
+
+  backdrop-filter: blur(12px);
+
+  transform: translateX(0);
+
+  transition:
+    transform 0.35s ease,
+    width 0.35s ease;
+}
+
+/* =========================
+   Toggle button
+   ========================= */
+
+.menu__toggle {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 40px;
+  height: 40px;
+
+  padding: 0;
+
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+
+  background: var(--color-surface);
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.menu__toggle:hover {
+  border-color: var(--color-primary-light);
+  background: var(--color-surface-hover);
+}
+
+.menu__toggle span {
+  display: block;
+
+  width: 16px;
+  height: 2px;
+
+  margin: 2px 0;
+
+  border-radius: 999px;
+
+  background: var(--color-text-secondary);
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+/* =========================
+   Closed navbar
+   ========================= */
+
+.menu--closed {
+  transform: translateX(-100%);
+}
+
+.menu--closed .menu__toggle {
+  left: calc(100% + 1rem);
+
+  border-color: var(--color-border);
+  background: rgba(8, 11, 18, 0.9);
+}
+
+/* =========================
+   Open → X
+   ========================= */
+
+.menu--closed .menu__toggle span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.menu--closed .menu__toggle span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu--closed .menu__toggle span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* =========================
+   Navigation
+   ========================= */
+
+.menu__navigation {
+  width: 100%;
+}
+
+.menu__list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.5rem;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.menu__item {
+  position: relative;
+}
+
+/* =========================
+   Navigation link
+   ========================= */
+
+.menu__link {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.menu__link:hover {
+  color: var(--color-text);
+  transform: translateX(4px);
+}
+
+/* =========================
+   Progress indicator
+   ========================= */
+
+.menu__indicator {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 12px;
+  height: 12px;
+
+  border: 1px solid var(--color-text-muted);
+  border-radius: 50%;
+
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Line connecting the dots */
+.menu__item:not(:last-child) .menu__indicator::after {
+  content: "";
+
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 50%;
+
+  width: 1px;
+  height: 1.5rem;
+
+  background: var(--color-border);
+
+  transform: translateX(-50%);
+}
+
+/* Hover state */
+.menu__link:hover .menu__indicator {
+  border-color: var(--color-primary-light);
+
+  background: var(--color-primary-light);
+
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* =========================
+   Active section
+   ========================= */
+
+.menu__item.active .menu__link {
+  color: var(--color-text);
+}
+
+.menu__item.active .menu__indicator {
+  border-color: var(--color-primary-light);
+
+  background: var(--color-primary-light);
+
+  box-shadow:
+    0 0 0 4px rgba(59, 130, 246, 0.1),
+    0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* =========================
+   Language switcher
+   ========================= */
+
+.language-switcher {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+
+  display: flex;
+  align-items: center;
+
+  gap: 0.5rem;
+
+  color: var(--color-text-muted);
+
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.language-switcher button {
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--color-text-muted);
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.language-switcher button:hover {
+  color: var(--color-primary-light);
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 900px) {
+  .menu {
+    width: 180px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .menu {
+    top: 0;
+    right: 0;
+    bottom: auto;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 1rem 1.5rem;
+
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .menu__list {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .menu__indicator {
+    display: none;
+  }
+
+  .menu__item:not(:last-child) .menu__indicator::after {
+    display: none;
+  }
+
+  .menu__text {
+    font-size: 0.75rem;
+  }
+
+  .language-switcher {
+    position: static;
+  }
+}

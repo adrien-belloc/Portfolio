@@ -1,10 +1,103 @@
-<nav class="menu">
-      <!-- Navigation menu, shown at startup and hidden on click of the menu button (three lines/dot as usual). Menu button is top left and the menu is on the left and leads to the different parts of the page -->
-      <ul class="menu__list">
-        <li class="menu__item"><a href="#header" class="menu__link">Home</a></li>
-        <li class="menu__item"><a href="#competences" class="menu__link">Skills</a></li>
-        <li class="menu__item"><a href="#projets" class="menu__link">Projects</a></li>
-        <li class="menu__item"><a href="#parcours" class="menu__link">Journey</a></li>
-        <li class="menu__item"><a href="#contact" class="menu__link">Contact</a></li>
-      </ul>
+<nav class="menu" [class.menu--closed]="!navbarService.isOpen()">
+
+<button
+  type="button"
+  class="menu__toggle"
+  (click)="navbarService.toggle()"
+  [attr.aria-label]="
+    navbarService.isOpen()
+      ? 'Close navigation'
+      : 'Open navigation'
+  "
+  [attr.aria-expanded]="navbarService.isOpen()"
+>
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <div class="menu__navigation">
+    <ul class="menu__list">
+
+      <li
+        class="menu__item"
+        [class.active]="activeSection() === 'header'"
+      >
+        <a href="#header" class="menu__link">
+          <span class="menu__indicator"></span>
+          <span class="menu__text">
+            {{ languageService.translations().nav.home }}
+          </span>
+        </a>
+      </li>
+
+      <li
+        class="menu__item"
+        [class.active]="activeSection() === 'skills'"
+      >
+        <a href="#skills" class="menu__link">
+          <span class="menu__indicator"></span>
+          <span class="menu__text">
+            {{ languageService.translations().nav.skills }}
+          </span>
+        </a>
+      </li>
+
+      <li
+        class="menu__item"
+        [class.active]="activeSection() === 'projects'"
+      >
+        <a href="#projects" class="menu__link">
+          <span class="menu__indicator"></span>
+          <span class="menu__text">
+            {{ languageService.translations().nav.projects }}
+          </span>
+        </a>
+      </li>
+
+      <li
+        class="menu__item"
+        [class.active]="activeSection() === 'background'"
+      >
+        <a href="#background" class="menu__link">
+          <span class="menu__indicator"></span>
+          <span class="menu__text">
+            {{ languageService.translations().nav.background }}
+          </span>
+        </a>
+      </li>
+
+      <li
+        class="menu__item"
+        [class.active]="activeSection() === 'contact'"
+      >
+        <a href="#contact" class="menu__link">
+          <span class="menu__indicator"></span>
+          <span class="menu__text">
+            {{ languageService.translations().nav.contact }}
+          </span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+
+  <div class="language-switcher">
+    <button
+      type="button"
+      (click)="languageService.setLanguage('en')"
+    >
+      EN
+    </button>
+
+    <span>/</span>
+
+    <button
+      type="button"
+      (click)="languageService.setLanguage('fr')"
+    >
+      FR
+    </button>
+  </div>
+
 </nav>

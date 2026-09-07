@@ -1,0 +1,35 @@
+.app-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+
+  height: 100vh;
+
+  transition: grid-template-columns 0.35s ease;
+}
+
+.app-layout:not(.app-layout--menu-open) {
+  grid-template-columns: 0 1fr;
+}
+
+.app-layout--menu-open {
+  grid-template-columns: 220px 1fr;
+}
+
+.app-layout:not(.app-layout--menu-open) {
+  grid-template-columns: 0 1fr;
+}
+
+.main {
+  min-width: 0;
+  height: 100vh;
+
+  overflow-y: auto;
+
+  scroll-snap-type: y mandatory;
+}
+
+.main > section {
+  min-height: 100vh;
+
+  scroll-snap-align: start;
+}

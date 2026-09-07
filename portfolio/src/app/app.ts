@@ -1,14 +1,29 @@
-import { Component, signal, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { LanguageService } from './services/language.service';
+
+import { Header } from './components/header/header';
+import { Navbar } from './components/navbar/navbar';
+import { Skills } from './components/skills/skills';
+import { Projects } from './components/projects/projects';
+import { Background } from './components/background/background';
+import { Contact } from './components/contact/contact';
+
+import { NavbarService } from './services/navbar.service';
 
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './app.css',
+  imports: [
+    RouterOutlet,
+    Navbar,
+    Header,
+    Skills,
+    Projects,
+    Background,
+    Contact,
+  ],
   templateUrl: './app.html',
+  styleUrl: './app.css',
 })
 export class App {
-  languageService = inject(LanguageService);
-  protected readonly title = signal('portfolio');
+  navbarService = inject(NavbarService);
 }

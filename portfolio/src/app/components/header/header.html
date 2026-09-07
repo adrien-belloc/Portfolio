@@ -1,5 +1,29 @@
-<section id="header">
-      <!-- Left side, Title and introduction. Right side, photo -->
-      <h1 class="header__title">Portfolio</h1>
-      <p class="header__subtitle">Welcome to my portfolio website!</p>
+<section id="header" class="header">
+  <div class="header__content">
+    <p class="header__welcome">
+      {{ languageService.translations().header.welcome }}
+    </p>
+
+    <h1 class="header__title">
+      {{ languageService.translations().header.title }}
+    </h1>
+
+    <p class="header__role">
+      {{ languageService.translations().header.role }}
+    </p>
+
+    <p class="header__diploma">
+      {{ languageService.translations().header.diploma }}
+    </p>
+
+    <p class="header__description">
+      {{ languageService.translations().header.description }}
+    </p>
+  </div>
+
+  <div class="header__image">
+    <a href="/images/profile.png" target="_blank">
+      <img src="/images/profile.png" alt="Adrien Belloc" />
+    </a>
+  </div>
 </section>

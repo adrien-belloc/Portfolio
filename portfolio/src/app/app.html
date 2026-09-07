@@ -1,11 +1,16 @@
-<main class="main">
+<div
+  class="app-layout"
+  [class.app-layout--menu-open]="navbarService.isOpen()"
+>
   <app-navbar />
-  <app-language-switcher />
-  <app-header />
-  <app-skills />
-  <app-projects />
-  <app-background />
-  <app-contact />
-</main>
+
+  <main class="main">
+    <app-header />
+    <app-skills />
+    <app-projects />
+    <app-background />
+    <app-contact />
+  </main>
+</div>
 
 <router-outlet />
